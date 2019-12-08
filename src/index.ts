@@ -1,19 +1,5 @@
 import { createApp, onErrorCaptured, ref } from "./vue.esm-browser";
 
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function fetchData() {
-  await timeout(3000);
-  // uncomment the line below for error capturing
-  // throw new Error("UPS! There was an error.");
-  return {
-    name: "Mesut",
-    age: 25
-  };
-}
-
 const UserProfile = {
   async setup() {
     const user = await fetchData();
@@ -41,7 +27,7 @@ const App = {
   },
 
   template: `
-    <h3>Vue 3 - Suspense</h3>
+    <h1>Vue 3 - Suspense</h1>
     <div v-if="error">
       {{ error }}
     </div>
@@ -57,3 +43,19 @@ const App = {
 };
 
 createApp().mount(App, "#app");
+
+// Utils
+
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchData() {
+  await timeout(3000);
+  // uncomment the line below for error capturing
+  // throw new Error("UPS! There was an error.");
+  return {
+    name: "Mesut",
+    age: 25
+  };
+}
