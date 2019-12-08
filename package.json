@@ -1,7 +1,7 @@
 {
   "name": "vue-3-suspense-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vue 3 Suspense example",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
