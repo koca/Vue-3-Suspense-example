@@ -1,4 +1,5 @@
 import { createApp, onErrorCaptured, ref } from "./vue.esm-browser";
+import Twitter from "./twitter"; // @imesutkoca
 
 const UserProfile = {
   async setup() {
@@ -39,10 +40,14 @@ const App = {
         <div>Loading... (3 seconds)</div>
       </template>
     </Suspense>
+
+    <Twitter />
   `
 };
 
-createApp().mount(App, "#app");
+var app = createApp();
+app.component("Twitter", Twitter);
+app.mount(App, "#app");
 
 // Utils
 
